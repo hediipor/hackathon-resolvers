@@ -1,1 +1,31 @@
-<p>navbar works!</p>
+<nav class="navbar">
+  <div class="navbar-container">
+    <!-- Logo Section -->
+    <div class="navbar-logo">
+      <img src="assets/logo.png" alt="Logo" class="logo-img">
+      <span class="logo-text">AppName</span>
+    </div>
+
+    <!-- Navigation Links -->
+    <div class="navbar-links">
+      <a href="#home" class="nav-link active">Home</a>
+      <a href="#features" class="nav-link">Features</a>
+      <a href="#about" class="nav-link">About</a>
+      <a href="#contact" class="nav-link">Contact</a>
+    </div>
+
+    <!-- Login Button -->
+    <div class="navbar-actions">
+      <button (click)="openLoginPopup()" class="login-btn">Login</button>
+    </div>
+  </div>
+</nav>
+
+<!-- Login Popup Modal -->
+<div class="login-popup-overlay" *ngIf="isLoginPopupOpen" (click)="closeLoginPopup()">
+  <div class="login-popup" (click)="$event.stopPropagation()">
+    <button class="close-btn" (click)="closeLoginPopup()">&times;</button>
+    <h2 class="popup-title">Login</h2>
+    <p class="popup-placeholder">Login form will be added here</p>
+  </div>
+</div>

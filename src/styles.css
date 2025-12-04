@@ -1,1 +1,18 @@
-/* You can add global styles to this file, and also import other style files */
+/* Global Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: 'Inter', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: linear-gradient(135deg, #1a2c54 0%, #2e0f38 100%);
+    min-height: 100vh;
+    color: #ffffff;
+    overflow-x: hidden;
+}
