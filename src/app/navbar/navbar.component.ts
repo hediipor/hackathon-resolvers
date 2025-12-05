@@ -7,6 +7,7 @@ import { Component, OnInit } from '@angular/core';
 })
 export class NavbarComponent implements OnInit {
   isLoginPopupOpen = false;
+  isSignupPopupOpen = false;
 
   constructor() { }
 
@@ -15,10 +16,30 @@ export class NavbarComponent implements OnInit {
 
   openLoginPopup(): void {
     this.isLoginPopupOpen = true;
+    this.isSignupPopupOpen = false;
+  }
+
+  openSignupPopup(): void {
+    this.isSignupPopupOpen = true;
+    this.isLoginPopupOpen = false;
   }
 
   closeLoginPopup(): void {
     this.isLoginPopupOpen = false;
+  }
+
+  closeSignupPopup(): void {
+    this.isSignupPopupOpen = false;
+  }
+
+  switchToSignup(): void {
+    this.isLoginPopupOpen = false;
+    this.isSignupPopupOpen = true;
+  }
+
+  switchToLogin(): void {
+    this.isSignupPopupOpen = false;
+    this.isLoginPopupOpen = true;
   }
 
 }

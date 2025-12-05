@@ -1,1 +1,87 @@
-<p>signup works!</p>
+<div class="signup-container">
+    <header class="signup-header">
+        <div class="brand">
+            <div class="brand__name">Create Account</div>
+        </div>
+    </header>
+
+    <div class="signup-body">
+        <p class="hint">Join us today! Create your account to get started.</p>
+
+        <form (ngSubmit)="onSubmit()" #signupForm="ngForm">
+            <!-- Name Field -->
+            <div class="field">
+                <label class="label" for="name">Full Name</label>
+                <div class="input" [class.error-border]="nameError">
+                    <span class="input__icon">👤</span>
+                    <input id="name" name="name" type="text" placeholder="John Doe" autocomplete="name"
+                        [(ngModel)]="name" (input)="validateName()" required />
+                </div>
+                <div class="error" *ngIf="nameError">{{ nameError }}</div>
+            </div>
+
+            <!-- Email Field -->
+            <div class="field">
+                <label class="label" for="signup-email">Email</label>
+                <div class="input" [class.error-border]="emailError">
+                    <span class="input__icon">✉️</span>
+                    <input id="signup-email" name="email" type="email" placeholder="you@example.com"
+                        autocomplete="email" [(ngModel)]="email" (input)="validateEmail()" required />
+                </div>
+                <div class="error" *ngIf="emailError">{{ emailError }}</div>
+            </div>
+
+            <!-- Password Field -->
+            <div class="field">
+                <label class="label" for="signup-password">Password</label>
+                <div class="input" [class.error-border]="passwordError">
+                    <span class="input__icon">🔒</span>
+                    <input id="signup-password" name="password" [type]="showPassword ? 'text' : 'password'"
+                        placeholder="Create a password" autocomplete="new-password" [(ngModel)]="password"
+                        (input)="validatePassword()" minlength="6" required />
+                    <button type="button" class="password-toggle" (click)="togglePasswordVisibility()"
+                        [attr.aria-pressed]="showPassword">
+                        {{ showPassword ? 'Hide' : 'Show' }}
+                    </button>
+                </div>
+                <div class="error" *ngIf="passwordError">{{ passwordError }}</div>
+            </div>
+
+            <!-- Confirm Password Field -->
+            <div class="field">
+                <label class="label" for="confirm-password">Confirm Password</label>
+                <div class="input" [class.error-border]="confirmPasswordError">
+                    <span class="input__icon">🔒</span>
+                    <input id="confirm-password" name="confirmPassword"
+                        [type]="showConfirmPassword ? 'text' : 'password'" placeholder="Confirm your password"
+                        autocomplete="new-password" [(ngModel)]="confirmPassword" (input)="validateConfirmPassword()"
+                        minlength="6" required />
+                    <button type="button" class="password-toggle" (click)="toggleConfirmPasswordVisibility()"
+                        [attr.aria-pressed]="showConfirmPassword">
+                        {{ showConfirmPassword ? 'Hide' : 'Show' }}
+                    </button>
+                </div>
+                <div class="error" *ngIf="confirmPasswordError">{{ confirmPasswordError }}</div>
+            </div>
+
+            <!-- Terms Agreement -->
+            <div class="row">
+                <label class="remember">
+                    <input type="checkbox" [(ngModel)]="agreeToTerms" name="terms" required />
+                    I agree to the <a href="#" class="link">Terms & Conditions</a>
+                </label>
+            </div>
+
+            <!-- Submit Button -->
+            <button class="btn-primary" type="submit" [disabled]="!isFormValid() || isSubmitting">
+                {{ isSubmitting ? 'Creating Account…' : 'Create Account' }}
+            </button>
+
+            <!-- Switch to Login -->
+            <div class="switch-auth">
+                Already have an account?
+                <a (click)="onSwitchToLogin()" class="link">Sign in</a>
+            </div>
+        </form>
+    </div>
+</div>

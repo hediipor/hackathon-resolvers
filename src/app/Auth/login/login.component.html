@@ -48,6 +48,12 @@
             <button class="btn-primary" type="submit" [disabled]="!isFormValid() || isSubmitting">
                 {{ isSubmitting ? 'Signing in…' : 'Sign in' }}
             </button>
+
+            <!-- Switch to Signup -->
+            <div class="switch-auth">
+                Don't have an account?
+                <a (click)="onSwitchToSignup()" class="link">Create one</a>
+            </div>
         </form>
     </div>
 </div>
