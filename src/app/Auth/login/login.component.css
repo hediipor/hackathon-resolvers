@@ -1,0 +1,203 @@
+/* ===== Color system (from auth module) ===== */
+:root {
+    --plum-900: #2e0f38;
+    --blue-900: #1a2c54;
+    --purple-500: #8351a8;
+    --teal-500: #4d7b93;
+    --magenta-500: #b45dbb;
+    --text-100: #f5f2f8;
+    --text-300: #d9cfe4;
+    --danger: #ff6b6b;
+}
+
+.login-container {
+    width: 100%;
+    color: var(--text-100);
+}
+
+/* ===== Header ===== */
+.login-header {
+    margin-bottom: 10px;
+}
+
+.brand {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    justify-content: center;
+}
+
+.brand__logo {
+    width: 36px;
+    height: 36px;
+    border-radius: 10px;
+    background: linear-gradient(135deg, var(--purple-500), var(--magenta-500));
+    display: grid;
+    place-items: center;
+    font-weight: 800;
+    color: #fff;
+    letter-spacing: 0.5px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.25);
+}
+
+.brand__name {
+    font-size: 18px;
+    font-weight: 800;
+    color: #fff;
+}
+
+/* ===== Body ===== */
+.login-body {
+    margin-top: 8px;
+}
+
+.hint {
+    margin: 0 0 12px;
+    color: var(--text-300);
+    font-size: 14px;
+    text-align: center;
+}
+
+/* ===== Form ===== */
+.field {
+    margin-bottom: 12px;
+}
+
+.label {
+    display: block;
+    font-size: 13px;
+    color: var(--text-300);
+    margin-bottom: 6px;
+}
+
+.input {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    background: #0b203a;
+    border: 1px solid color-mix(in oklab, var(--teal-500), white 35%);
+    border-radius: 12px;
+    padding: 10px 12px;
+    transition: all 0.2s ease;
+}
+
+.input:focus-within {
+    outline: 2px solid color-mix(in oklab, var(--purple-500), white 20%);
+    border-color: var(--purple-500);
+}
+
+.input.error-border {
+    border-color: var(--danger);
+}
+
+.input input {
+    background: transparent;
+    border: 0;
+    outline: 0;
+    color: #fff;
+    width: 100%;
+    font-size: 15px;
+}
+
+.input input::placeholder {
+    color: rgba(255, 255, 255, 0.4);
+}
+
+.input__icon {
+    color: color-mix(in oklab, var(--teal-500), white 30%);
+    font-size: 18px;
+}
+
+.password-toggle {
+    appearance: none;
+    border: 0;
+    background: transparent;
+    color: var(--text-300);
+    cursor: pointer;
+    font-size: 13px;
+    padding: 4px 6px;
+    border-radius: 6px;
+    transition: all 0.2s ease;
+}
+
+.password-toggle:hover {
+    color: #fff;
+    background: rgba(255, 255, 255, 0.06);
+}
+
+.row {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 10px;
+    margin: 6px 0 14px;
+}
+
+.remember {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 13px;
+    color: var(--text-300);
+    cursor: pointer;
+}
+
+.remember input {
+    accent-color: var(--purple-500);
+    cursor: pointer;
+}
+
+.link {
+    color: var(--magenta-500);
+    font-size: 13px;
+    text-decoration: none;
+    transition: all 0.2s ease;
+}
+
+.link:hover {
+    text-decoration: underline;
+}
+
+.btn-primary {
+    width: 100%;
+    padding: 12px 14px;
+    border-radius: 12px;
+    border: 1px solid color-mix(in oklab, var(--purple-500), white 20%);
+    background: linear-gradient(180deg, color-mix(in oklab, var(--purple-500), white 18%), var(--purple-500));
+    color: #fff;
+    font-weight: 800;
+    letter-spacing: 0.3px;
+    cursor: pointer;
+    box-shadow: 0 8px 22px rgba(0, 0, 0, 0.30);
+    transition: filter 0.15s ease, transform 0.08s ease, background 0.2s ease;
+}
+
+.btn-primary:hover:not(:disabled) {
+    transform: translateY(-1px);
+    filter: brightness(1.05);
+}
+
+.btn-primary:disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+    filter: grayscale(0.3) brightness(0.85);
+}
+
+.error {
+    color: var(--danger);
+    font-size: 12px;
+    margin-top: 6px;
+    min-height: 14px;
+}
+
+/* Small screens */
+@media (max-width: 420px) {
+    .brand__logo {
+        width: 32px;
+        height: 32px;
+    }
+
+    .brand__name {
+        font-size: 16px;
+    }
+}
