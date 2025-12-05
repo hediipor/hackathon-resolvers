@@ -13,7 +13,7 @@
             <div class="field">
                 <label class="label" for="email">Email</label>
                 <div class="input" [class.error-border]="emailError">
-                    <span class="input__icon">✉️</span>
+
                     <input id="email" name="email" type="email" placeholder="you@example.com" autocomplete="username"
                         [(ngModel)]="email" (input)="validateEmail()" required />
                 </div>
@@ -24,7 +24,7 @@
             <div class="field">
                 <label class="label" for="password">Password</label>
                 <div class="input" [class.error-border]="passwordError">
-                    <span class="input__icon">🔒</span>
+
                     <input id="password" name="password" [type]="showPassword ? 'text' : 'password'"
                         placeholder="Your password" autocomplete="current-password" [(ngModel)]="password"
                         (input)="validatePassword()" minlength="6" required />
