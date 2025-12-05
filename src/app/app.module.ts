@@ -19,7 +19,7 @@ import { ImgSliderComponent } from './img-slider/img-slider.component';
     NavbarComponent,
     SignupComponent,
     LoginComponent,
-    ProfileComponent
+    ProfileComponent,
     ImgSliderComponent
   ],
   imports: [
