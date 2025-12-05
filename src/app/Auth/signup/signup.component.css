@@ -113,6 +113,86 @@
     background: rgba(255, 255, 255, 0.06);
 }
 
+/* Password Strength Indicator */
+.password-strength {
+    margin-top: 8px;
+}
+
+.strength-bar {
+    height: 4px;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 2px;
+    overflow: hidden;
+    margin-bottom: 6px;
+}
+
+.strength-fill {
+    height: 100%;
+    transition: width 0.3s ease, background-color 0.3s ease;
+    border-radius: 2px;
+}
+
+.strength-fill.strength-1 {
+    background: #ff6b6b;
+}
+
+.strength-fill.strength-2 {
+    background: #ffa500;
+}
+
+.strength-fill.strength-3 {
+    background: #4d7b93;
+}
+
+.strength-fill.strength-4 {
+    background: #4caf50;
+}
+
+.strength-text {
+    font-size: 12px;
+    font-weight: 600;
+    transition: color 0.3s ease;
+}
+
+.strength-text.strength-1 {
+    color: #ff6b6b;
+}
+
+.strength-text.strength-2 {
+    color: #ffa500;
+}
+
+.strength-text.strength-3 {
+    color: #4d7b93;
+}
+
+.strength-text.strength-4 {
+    color: #4caf50;
+}
+
+/* Role Select */
+.role-select {
+    background: transparent;
+    border: 0;
+    outline: 0;
+    color: #fff;
+    width: 100%;
+    font-size: 15px;
+    cursor: pointer;
+    appearance: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+}
+
+.role-select option {
+    background: #0b203a;
+    color: #fff;
+}
+
+.role-select:invalid {
+    color: rgba(255, 255, 255, 0.4);
+}
+
 .row {
     display: flex;
     align-items: center;

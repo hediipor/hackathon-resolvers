@@ -45,6 +45,21 @@
                     </button>
                 </div>
                 <div class="error" *ngIf="passwordError">{{ passwordError }}</div>
+
+                <!-- Password Strength Indicator -->
+                <div class="password-strength" *ngIf="password && !passwordError">
+                    <div class="strength-bar">
+                        <div class="strength-fill" [class.strength-1]="passwordStrength === 1"
+                            [class.strength-2]="passwordStrength === 2" [class.strength-3]="passwordStrength === 3"
+                            [class.strength-4]="passwordStrength === 4" [style.width.%]="passwordStrength * 25">
+                        </div>
+                    </div>
+                    <div class="strength-text" [class.strength-1]="passwordStrength === 1"
+                        [class.strength-2]="passwordStrength === 2" [class.strength-3]="passwordStrength === 3"
+                        [class.strength-4]="passwordStrength === 4">
+                        {{ passwordStrengthText }}
+                    </div>
+                </div>
             </div>
 
             <!-- Confirm Password Field -->
@@ -62,6 +77,22 @@
                     </button>
                 </div>
                 <div class="error" *ngIf="confirmPasswordError">{{ confirmPasswordError }}</div>
+            </div>
+
+            <!-- Role Selection Field -->
+            <div class="field">
+                <label class="label" for="role">Role</label>
+                <div class="input" [class.error-border]="roleError">
+                    <span class="input__icon">🎓</span>
+                    <select id="role" name="role" [(ngModel)]="role" (change)="validateRole()" required
+                        class="role-select">
+                        <option value="" disabled selected>Select your role</option>
+                        <option *ngFor="let roleOption of roles" [value]="roleOption">
+                            {{ roleOption }}
+                        </option>
+                    </select>
+                </div>
+                <div class="error" *ngIf="roleError">{{ roleError }}</div>
             </div>
 
             <!-- Terms Agreement -->
