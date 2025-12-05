@@ -53,15 +53,55 @@
     background: linear-gradient(135deg, #2e0f38 0%, #4d7b93 100%);
 }
 
-/* About Section */
-.about-section {
-    background: linear-gradient(135deg, #4d7b93 0%, #1a2c54 100%);
+/* About – NIRD block */
+.about-nird {
+  padding: 2rem 1rem 3rem;
 }
+.nird-container {
+  max-width: 860px;
+  margin: 0 auto;
+  background: #1a2c54;               /* panel */
+  color: #f4f6fb;
+  border: 1px solid #4d7b93;         /* subtle border */
+  border-radius: 16px;
+  box-shadow: 0 14px 36px rgba(0,0,0,.25);
+  padding: 1.4rem 1.4rem 1.2rem;
+}
+
+.nird-title {
+  margin: 0 0 .6rem;
+  font-size: 1.6rem;
+  color: #b45dbb;                    /* vivid magenta accent */
+}
+
+.nird-intro { margin-top: .4rem; }
+
+.nird-pillars, .nird-links {
+  margin: .6rem 0 1.2rem 0;
+  padding-left: 1.2rem;
+}
+.nird-pillars li { margin: .25rem 0; }
+.nird-links li { margin: .18rem 0; }
+
+.nird-container strong { color: #8351a8; } /* purple accent in text */
+.nird-container em { color: #b45dbb; }     /* secondary emphasis */
+
+/* Optional: links styling if you later add real hrefs */
+.nird-container a {
+  color: #b45dbb;
+  text-decoration: underline;
+  text-underline-offset: 2px;
+}
+.n.nird-container a:hover {
+  color: #8351a8; /* purple accent on hover */}
+
 
 /* Contact Section */
 .contact-section {
     background: linear-gradient(135deg, #1a2c54 0%, #2e0f38 100%);
 }
+
+
 
 /* Section Titles */
 .section-title {
