@@ -25,6 +25,14 @@
 <div class="login-popup-overlay" *ngIf="isLoginPopupOpen" (click)="closeLoginPopup()">
   <div class="login-popup" (click)="$event.stopPropagation()">
     <button class="close-btn" (click)="closeLoginPopup()">&times;</button>
-    <app-login></app-login>
+    <app-login (switchToSignup)="switchToSignup()"></app-login>
+  </div>
+</div>
+
+<!-- Signup Popup Modal -->
+<div class="login-popup-overlay" *ngIf="isSignupPopupOpen" (click)="closeSignupPopup()">
+  <div class="login-popup" (click)="$event.stopPropagation()">
+    <button class="close-btn" (click)="closeSignupPopup()">&times;</button>
+    <app-signup (switchToLogin)="switchToLogin()"></app-signup>
   </div>
 </div>

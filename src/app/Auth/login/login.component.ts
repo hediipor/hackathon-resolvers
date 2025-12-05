@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Output, EventEmitter } from '@angular/core';
 
 @Component({
   selector: 'app-login',
@@ -6,6 +6,8 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./login.component.css']
 })
 export class LoginComponent implements OnInit {
+  @Output() switchToSignup = new EventEmitter<void>();
+
   email: string = '';
   password: string = '';
   rememberMe: boolean = false;
@@ -56,6 +58,10 @@ export class LoginComponent implements OnInit {
 
   togglePasswordVisibility(): void {
     this.showPassword = !this.showPassword;
+  }
+
+  onSwitchToSignup(): void {
+    this.switchToSignup.emit();
   }
 
   onSubmit(): void {
