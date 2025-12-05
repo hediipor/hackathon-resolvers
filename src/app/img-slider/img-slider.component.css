@@ -1,0 +1,93 @@
+/* Slider Container */
+.img-slider {
+    width: 100%;
+    max-width: 900px;
+    margin: 2rem auto;
+    position: relative;
+    overflow: hidden;
+    border-radius: 15px;
+    padding: 2rem 0;
+}
+
+/* Each Slide */
+.slide {
+    display: none;
+    justify-content: center;
+    align-items: center;
+    animation: fadeInUp 0.8s ease;
+}
+
+.slide.active {
+    display: flex;
+}
+
+/* Card inside Slide */
+.slide-card {
+    background: linear-gradient(135deg, #2e0f38 0%, #4d7b93 100%);
+    border-radius: 15px;
+    padding: 1rem;
+    text-align: center;
+    width: 70%; /* controls the card width */
+    max-width: 500px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.4);
+}
+
+/* Image inside Card */
+.slide-card img {
+    width: 60%; /* smaller than the card */
+    height: auto;
+    border-radius: 10px;
+    margin-bottom: 1rem;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/* Paragraph under Image */
+.slide-description {
+    font-size: 1.2rem;
+    color: #e0e0e0;
+    line-height: 1.5;
+}
+
+/* Navigation Dots */
+.slider-dots {
+    position: absolute;
+    bottom: 10px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    gap: 10px;
+}
+
+.slider-dots span {
+    width: 12px;
+    height: 12px;
+    background-color: rgba(255, 255, 255, 0.5);
+    border-radius: 50%;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.slider-dots span.active {
+    background-color: #b45dbb;
+}
+
+/* Animation */
+@keyframes fadeInUp {
+    from { opacity: 0; transform: translateY(30px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .slide-card { width: 80%; }
+    .slide-card img { width: 70%; }
+    .slide-description { font-size: 1rem; }
+}
+
+@media (max-width: 480px) {
+    .slide-card { width: 90%; }
+    .slide-card img { width: 80%; }
+    .slide-description { font-size: 0.9rem; }
+}
