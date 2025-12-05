@@ -1,1 +1,21 @@
-<p>img-slider works!</p>
+<div class="img-slider">
+  <div
+    class="slide"
+    *ngFor="let slide of slides; let i = index"
+    [class.active]="i === currentIndex"
+  >
+    <div class="slide-card">
+      <img [src]="slide.img" [alt]="slide.text" />
+      <p class="slide-description">{{ slide.text }}</p>
+    </div>
+  </div>
+
+  <!-- Navigation dots -->
+  <div class="slider-dots">
+    <span
+      *ngFor="let slide of slides; let i = index"
+      [class.active]="i === currentIndex"
+      (click)="currentIndex = i"
+    ></span>
+  </div>
+</div>
